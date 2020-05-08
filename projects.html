@@ -16,21 +16,21 @@
   					<header>Projects</header>
   					<div style="height:15px;font-size:15px;">&nbsp;</div>
   					<p>I like to work on personal programming projects in my free time. These are all viewable on my <a href = "https://github.com/vee-upatising">GitHub</a>.</p>
-
-  					<button type="button" class="collapsible">Recycle Bot</button>
-  					<div class="content">
-	  					<div style="height:5px;font-size:15px;">&nbsp;</div>
-	  					<p>Using machine learning to sort trash from recyclables on the Raspberry Pi 4.</p>
-	  					<div style="height:5px;font-size:15px;">&nbsp;</div>
-	  					<img src="images/re.gif" alt="demo" />
-	  					<div style="height:5px;font-size:15px;">&nbsp;</div>
-	  					<p>I achieved the best results using Convolutional Neural Networks and Support Vector Machines. A visualization of a forward pass through the neural network as well as a heatmap of the pixels that activated the final convolutional layer can be viewed below:</p>
-	  					<img src="images/44.gif" alt="Forward Propagation" />
-	  					<img src="images/HeatMap44.png" alt="HeatMap" />
-	  					<p>I used Principal Component Analysis to project the data onto 3 dimensions and found a linear hyperplane that separates the two classes with 99.2% accuracy.</p>
-	  					<img src="images/SVM.jpg" alt="Support Vector Machine" />
-	  					<div style="height:15px;font-size:15px;">&nbsp;</div>
-  					</div>
+  					<details>
+  						<summary>Recycle Bot</summary>
+		  					<header><a href = "https://github.com/vee-upatising/Recycle-Bot">Recycle Bot</a></header>
+		  					<div style="height:5px;font-size:15px;">&nbsp;</div>
+		  					<p>Using machine learning to sort trash from recyclables on the Raspberry Pi 4.</p>
+		  					<div style="height:5px;font-size:15px;">&nbsp;</div>
+		  					<img src="images/re.gif" alt="demo" />
+		  					<div style="height:5px;font-size:15px;">&nbsp;</div>
+		  					<p>I achieved the best results using Convolutional Neural Networks and Support Vector Machines. A visualization of a forward pass through the neural network as well as a heatmap of the pixels that activated the final convolutional layer can be viewed below:</p>
+		  					<img src="images/44.gif" alt="Forward Propagation" />
+		  					<img src="images/HeatMap44.png" alt="HeatMap" />
+		  					<p>I used Principal Component Analysis to project the data onto 3 dimensions and found a linear hyperplane that separates the two classes with 99.2% accuracy.</p>
+		  					<img src="images/SVM.jpg" alt="Support Vector Machine" />
+		  					<div style="height:15px;font-size:15px;">&nbsp;</div>
+  					</details>
 
   					<header><a href = "https://github.com/vee-upatising/Anime-DCGAN">Generative Adversarial</a> <a href = "https://github.com/vee-upatising/Cat-GAN">Networks</a></header>
   					<div style="height:5px;font-size:15px;">&nbsp;</div>
@@ -77,21 +77,7 @@
 				}
 			</script>
 
-			<script>
-			var coll = document.getElementsByClassName("collapsible");
-			var i;
 
-			for (i = 0; i < coll.length; i++) {
-			  coll[i].addEventListener("click", function() {
-			    this.classList.toggle("active");
-			    var content = this.nextElementSibling;
-			    if (content.style.maxHeight){
-			      content.style.maxHeight = null;
-			    } else {
-			      content.style.maxHeight = content.scrollHeight + "px";
-			    } 
-			  });
-			}
-			</script>
+
 	</body>
 </html>
