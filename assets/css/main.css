@@ -1074,7 +1074,7 @@
 		-webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
 		-ms-transition: opacity 1s ease, -ms-transform 1s ease;
 		transition: opacity 1s ease, transform 1s ease;
-		padding: 0.5em 1.5em 1.5em 1.5em ;
+		padding: 1em 1.5em 1.5em 1.5em ;
 		background: #ffffff;
 		border-radius: 4px;
 		cursor: default;
