@@ -3,9 +3,6 @@ const canvas = document.getElementById('canvas');
 canvas.width  = 640;
 canvas.height = 480;
 
-//load model
-loadBodyPix();
-
 const startBtn = document.getElementById('start-btn');
 const stopBtn = document.getElementById('stop-btn');
 const blurBtn = document.getElementById('blur-btn');
@@ -60,6 +57,8 @@ blurBtn.addEventListener('click', e => {
 
   videoElement.hidden = true;
   canvas.hidden = false;
+  //load model
+  loadBodyPix();
 });
 
 unblurBtn.addEventListener('click', e => {
