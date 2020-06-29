@@ -10,6 +10,19 @@ const blurBtn = document.getElementById('blur-btn');
 const unblurBtn = document.getElementById('unblur-btn');
 
 const ctx = canvas.getContext('2d');
+var imageData;
+
+document.getElementById('myFile').onchange = function (evt) {
+    var tgt = evt.target || window.event.srcElement,
+        files = tgt.files;
+
+    // FileReader support
+    if (FileReader && files && files.length) {
+        var fr = new FileReader();
+        fr.onload = () => showImage(fr);
+        fr.readAsDataURL(files[0]);
+    }
+}
 
 startBtn.addEventListener('click', e => {
   startBtn.disabled = true;
@@ -93,13 +106,15 @@ function loadBodyPix() {
     .catch(err => console.log(err))
 }
 
-function getPixel(url, x, y) {
-  var img = new Image();
-  img.src = url;
-  var canvas = document.createElement('canvas');
-  var context = canvas.getContext('2d');
-  context.drawImage(img, 0, 0);
-  return context.getImageData(x, y, 1, 1).data;
+function showImage(fileReader) {
+    var img = document.getElementById("myImage");
+    img.onload = () => getImageData(img);
+    img.src = fileReader.result;
+}
+
+function getImageData(img) {
+    ctx.drawImage(img, 0, 0);
+    imageData = ctx.getImageData(0, 0, img.width, img.height).data;
 }
 
 async function perform(net) {
@@ -113,16 +128,25 @@ async function perform(net) {
     const backgroundDarkeningMask = bodyPix.toMask(
         segmentation, foregroundColor, backgroundColor);
 
-    for(var i=0; i<backgroundDarkeningMask.data.length; i+=4) {
-      if(backgroundDarkeningMask.data[i+3] == 255){
-        backgroundDarkeningMask.data[i] = 255;
-        backgroundDarkeningMask.data[i+1] = 255;
-        backgroundDarkeningMask.data[i+2] = 255;
+    if(imageData == null){
+      for(var i=0; i<backgroundDarkeningMask.data.length; i+=4) {
+        if(backgroundDarkeningMask.data[i+3] == 255){
+          backgroundDarkeningMask.data[i] = 255;
+          backgroundDarkeningMask.data[i+1] = 255;
+          backgroundDarkeningMask.data[i+2] = 255;
+        }
       }
     }
-
-    console.log(getPixel('https://s1.1zoom.me/b5050/940/Sky_Moon_Branches_586696_640x480.jpg',1,1))
-
+    else{
+      for(var i=0; i<backgroundDarkeningMask.data.length; i+=4) {
+        if(backgroundDarkeningMask.data[i+3] == 255){
+          backgroundDarkeningMask.data[i] = imageData[i];
+          backgroundDarkeningMask.data[i+1] = imageData[i+1];
+          backgroundDarkeningMask.data[i+2] = imageData[i+2];
+        }
+      }
+    }
+    
     const opacity = 1;
     const maskBlurAmount = 3;
     const flipHorizontal = true;
