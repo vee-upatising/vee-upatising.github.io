@@ -1,5 +1,6 @@
 const videoElement = document.getElementById('video');
 const canvas = document.getElementById('canvas');
+const bg = document.getElementById('image');
 canvas.width  = 640;
 canvas.height = 480;
 
@@ -92,17 +93,35 @@ function loadBodyPix() {
     .catch(err => console.log(err))
 }
 
+function getPixel(url, x, y) {
+  var img = new Image();
+  img.src = url;
+  var canvas = document.createElement('canvas');
+  var context = canvas.getContext('2d');
+  context.drawImage(img, 0, 0);
+  return context.getImageData(x, y, 1, 1).data;
+}
+
 async function perform(net) {
 
   while (startBtn.disabled && blurBtn.hidden) {
     const segmentation = await net.segmentPerson(video);
 
-    const maskBackground = true;
     // Convert the segmentation into a mask to darken the background.
     const foregroundColor = {r: 255, g: 255, b: 255, a: 0};
     const backgroundColor = {r: 124, g: 252, b: 0, a: 255};
     const backgroundDarkeningMask = bodyPix.toMask(
         segmentation, foregroundColor, backgroundColor);
+
+    for(var i=0; i<backgroundDarkeningMask.data.length; i+=4) {
+      if(backgroundDarkeningMask.data[i+3] == 255){
+        backgroundDarkeningMask.data[i] = 255;
+        backgroundDarkeningMask.data[i+1] = 255;
+        backgroundDarkeningMask.data[i+2] = 255;
+      }
+    }
+
+    console.log(getPixel('https://s1.1zoom.me/b5050/940/Sky_Moon_Branches_586696_640x480.jpg',1,1))
 
     const opacity = 1;
     const maskBlurAmount = 3;
