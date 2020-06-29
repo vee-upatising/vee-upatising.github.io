@@ -25,6 +25,9 @@ document.getElementById('myFile').onchange = function (evt) {
     }
 }
 
+//load model
+loadBodyPix();
+
 startBtn.addEventListener('click', e => {
   startBtn.disabled = true;
   stopBtn.disabled = false;
@@ -57,8 +60,6 @@ blurBtn.addEventListener('click', e => {
 
   videoElement.hidden = true;
   canvas.hidden = false;
-
-  loadBodyPix();
 });
 
 unblurBtn.addEventListener('click', e => {
