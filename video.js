@@ -1,5 +1,6 @@
 const videoElement = document.getElementById('video');
 const canvas = document.getElementById('canvas');
+const bg = document.getElementById('image');
 canvas.width  = 640;
 canvas.height = 480;
 
@@ -97,12 +98,22 @@ async function perform(net) {
   while (startBtn.disabled && blurBtn.hidden) {
     const segmentation = await net.segmentPerson(video);
 
-    const maskBackground = true;
     // Convert the segmentation into a mask to darken the background.
     const foregroundColor = {r: 255, g: 255, b: 255, a: 0};
     const backgroundColor = {r: 124, g: 252, b: 0, a: 255};
     const backgroundDarkeningMask = bodyPix.toMask(
         segmentation, foregroundColor, backgroundColor);
+    ctx.drawImage(bg, 0, 0 );
+    var myData = ctx.getImageData(0, 0, bg.width, bg.height);
+    console.log(myData)
+
+    for(var i=0; i<backgroundDarkeningMask.data.length; i+=4) {
+      if(backgroundDarkeningMask.data[i+3] == 255){
+        backgroundDarkeningMask.data[i] = 255;
+        backgroundDarkeningMask.data[i+1] = 255;
+        backgroundDarkeningMask.data[i+2] = 255;
+      }
+    }
 
     const opacity = 1;
     const maskBlurAmount = 3;
