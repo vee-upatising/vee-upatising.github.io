@@ -113,8 +113,8 @@ function showImage(fileReader) {
 }
 
 function getImageData(img) {
-    ctx.drawImage(img, 0, 0);
-    imageData = ctx.getImageData(0, 0, img.width, img.height).data;
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    imageData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
 }
 
 async function perform(net) {
@@ -124,20 +124,11 @@ async function perform(net) {
 
     // Convert the segmentation into a mask to darken the background.
     const foregroundColor = {r: 255, g: 255, b: 255, a: 0};
-    const backgroundColor = {r: 124, g: 252, b: 0, a: 255};
+    const backgroundColor = {r: 255, g: 255, b: 255, a: 255};
     const backgroundDarkeningMask = bodyPix.toMask(
         segmentation, foregroundColor, backgroundColor);
 
-    if(imageData == null){
-      for(var i=0; i<backgroundDarkeningMask.data.length; i+=4) {
-        if(backgroundDarkeningMask.data[i+3] == 255){
-          backgroundDarkeningMask.data[i] = 255;
-          backgroundDarkeningMask.data[i+1] = 255;
-          backgroundDarkeningMask.data[i+2] = 255;
-        }
-      }
-    }
-    else{
+    if(imageData != null){
       for(var i=0; i<backgroundDarkeningMask.data.length; i+=4) {
         if(backgroundDarkeningMask.data[i+3] == 255){
           backgroundDarkeningMask.data[i] = imageData[i];
@@ -146,10 +137,10 @@ async function perform(net) {
         }
       }
     }
-    
+
     const opacity = 1;
     const maskBlurAmount = 3;
-    const flipHorizontal = true;
+    const flipHorizontal = false;
     // Draw the mask onto the image on a canvas.  With opacity set to 0.7 and
     // maskBlurAmount set to 3, this will darken the background and blur the
     // darkened background's edge.
