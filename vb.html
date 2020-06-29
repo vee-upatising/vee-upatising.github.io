@@ -1,38 +1,35 @@
+<!DOCTYPE HTML>
 <html>
-  <header>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>Virtual Background</title>
-
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.2"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix@2.0"></script>
-
-  </header>
-
-  <main role="main">
-    <center>
-      <h1>Virtual Background</h1>
-      <video id="video" width="640" height="480" autoplay playsinline></video>
-      <img id="myImage" style="border:1px; display: none;"/>
-      <canvas hidden id="canvas"></canvas>
-      <div style="height:20px;font-size:5px;">&nbsp;</div>
-      <h5>Virtual Background</h5>
-      <p>Use the Start and Stop buttons to control your webcam.<br>Toggle between Mask and Normal to automatically replace the background in your video.</p>
-      <div class="btn-group btn-group-sm">
-        <button id="start-btn" type="button" class="btn btn-sm btn-outline-success">Start</button>
-        <button id="blur-btn" type="button" class="btn btn-sm btn-outline-secondary" disabled>Mask</button>
-        <button id="unblur-btn" type="button" class="btn btn-sm btn-outline-secondary" hidden>Normal</button>
-        <button id="stop-btn" type="button" class="btn btn-sm btn-outline-danger" disabled>Stop</button>
-      </div>
-      <div style="height:20px;font-size:5px;">&nbsp;</div>
-      <h5>Upload Background</h5>
-      <p>Upload a custom image to be your background.<br>If no image is uploaded, the default background will be a white canvas.</p>
-      <input type="file" id="myFile" style="height:640px; width:480px"></input>
-    </center>
-    <script src="video.js"></script>
-    
-
-  </main>
+	<head>
+		<title>Virtual Background</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper2">
+				<section id="vb">
+					<p style="text-align: left; letter-spacing: 1px"><a href = "projects.html">Go Back</a></p>
+  					 <center>
+				      <h1>Virtual Background</h1>
+				      <video id="video" width="640" height="480" autoplay playsinline></video>
+				      <img id="myImage" style="border:1px; display: none;"/>
+				      <canvas hidden id="canvas"></canvas>
+				      <p style="font-size:80%; text-align: center">Use the Start and Stop buttons to control your webcam.<br>Toggle between Mask and Normal to automatically replace the background in your video.</p>
+				      <button id="start-btn" type="button" class="btn btn-sm btn-outline-success">Start</button>
+				      <button id="blur-btn" type="button" class="btn btn-sm btn-outline-secondary" disabled>Mask</button>
+				      <button id="unblur-btn" type="button" class="btn btn-sm btn-outline-secondary" hidden>Normal</button>
+				      <button id="stop-btn" type="button" class="btn btn-sm btn-outline-danger" disabled>Stop</button>
+				      <div style="height:20px;font-size:5px;">&nbsp;</div>
+				      <h5>Upload Background</h5>
+				      <p style="font-size:80%; text-align: center">Upload a custom image to be your background.<br>If no image is uploaded, the default background will be a white canvas.</p>
+				      <input type="file" id="myFile" style="width:480px"></input>
+				    </center>
+			</div>
+	</body>
+	<script src="video.js"></script>
 </html>
