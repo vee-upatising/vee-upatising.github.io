@@ -3,6 +3,9 @@ const canvas = document.getElementById('canvas');
 canvas.width  = 640;
 canvas.height = 480;
 
+//load model
+loadBodyPix();
+
 const startBtn = document.getElementById('start-btn');
 const stopBtn = document.getElementById('stop-btn');
 const blurBtn = document.getElementById('blur-btn');
@@ -24,9 +27,6 @@ document.getElementById('myFile').onchange = function (evt) {
         fr.readAsDataURL(files[0]);
     }
 }
-
-//load model
-loadBodyPix();
 
 startBtn.addEventListener('click', e => {
   startBtn.disabled = true;
