@@ -98,7 +98,7 @@ function loadBodyPix() {
   options = {
     architecture: 'MobileNetV1',
     outputStride: 16,
-    multiplier: 0.75,
+    multiplier: 1,
     quantBytes: 2
   }
   bodyPix.load(options)
