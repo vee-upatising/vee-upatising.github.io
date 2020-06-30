@@ -12,6 +12,11 @@ const ctx = canvas.getContext('2d');
 //placeholder variable for user uploaded image
 var imageData;
 
+var model;
+
+//pre-load model
+loadBodyPix();
+
 //for reading user uploaded image
 document.getElementById('myFile').onchange = function (evt) {
     var tgt = evt.target || window.event.srcElement,
@@ -57,8 +62,8 @@ blurBtn.addEventListener('click', e => {
 
   videoElement.hidden = true;
   canvas.hidden = false;
-  //load model
-  loadBodyPix();
+
+  perform(model)
 });
 
 unblurBtn.addEventListener('click', e => {
@@ -107,8 +112,13 @@ function loadBodyPix() {
     quantBytes: 2
   }
   bodyPix.load(options)
-    .then(net => perform(net))
+    .then(net => setvariable(net))
     .catch(err => console.log(err))
+}
+
+//update model variable
+function setvariable(net){
+  model = net;
 }
 
 //helper function for reading user uploaded image
