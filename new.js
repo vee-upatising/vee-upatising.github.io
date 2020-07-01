@@ -39,9 +39,11 @@ function getImageData(img) {
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
     imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     x = tf.browser.fromPixels(imageData)
+    x = x.mul(1/255)
     x = tf.reshape(x,[1,64,64,3])
     output = model.predict(x)
     output = tf.squeeze(output,)
+    output = output.mul(255)
     data = output.dataSync()
     //create a buffer array
     const buffer = new Uint8ClampedArray(256 * 256 * 4)
