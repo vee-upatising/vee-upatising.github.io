@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.2"  crossorigin="anonymous"></script>
+	<head>
+		<title>Virtual Background</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper2">
+				<section id="vb">
+					<p style="text-align: left; letter-spacing: 1px"><a href = "projects.html">Go Back</a></p>
+  					 <center>
+				      <h1>Super Resolution</h1>
+				      <p style = "text-align:center";>Input</p>
+				      <div class="slidecontainer">
+					  	<input type="range" min="1" max="100" value="50" class="slider" id="myRange" style=" 
+					  	-webkit-appearance: none;  /* Override default CSS styles */
+						  appearance: none;
+						  width: 100%; /* Full-width */
+						  height: 25px; /* Specified height */
+						  background: #d3d3d3; /* Grey background */
+						  outline: none; /* Remove outline */
+						  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+						  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+						  transition: opacity .2s;">
+					  </div>
+					  <button id="start-btn" type="button">Generate</button>
+				      <img id="myImage" style="border:1px; display: none;"/>
+				      <div style="height:5px;font-size:5px;">&nbsp;</div>
+				      <canvas id="canvas" height="256" width="256"></canvas>
+				    </center>
+			</div>
+	</body>
+	<script src="gan.js"></script>
+</html>
