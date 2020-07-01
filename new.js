@@ -6,17 +6,13 @@ canvas.height = 64;
 canvas2.width  = 256;
 canvas2.height = 256;
 
-
-const startBtn = document.getElementById('start-btn');
-const stopBtn = document.getElementById('stop-btn');
-const blurBtn = document.getElementById('blur-btn');
-const unblurBtn = document.getElementById('unblur-btn');
-
 const ctx = canvas.getContext('2d');
 //placeholder variable for user uploaded image
 var imageData;
 var output;
 var model;
+
+load_model()
 
 //for reading user uploaded image
 document.getElementById('myFile').onchange = function (evt) {
@@ -46,10 +42,8 @@ function getImageData(img) {
     x = tf.reshape(x,[1,64,64,3])
     output = model.predict(x)
     output = tf.squeeze(output,)
-    console.log(output)
     data = output.dataSync()
-    console.log(data)
-        //create a buffer array
+    //create a buffer array
     const buffer = new Uint8ClampedArray(256 * 256 * 4)
     //create an Image data var 
     im = new ImageData(256, 256);
@@ -71,9 +65,12 @@ function getImageData(img) {
     im.data.set(buffer)
     //show the image on canvas
     const ctx2 = canvas2.getContext('2d');
-    ctx2.drawImage(img, 0, 0, 256, 256);
+    ctx2.putImageData(im, 0, 0); 
+    var x = document.getElementById("t1");
+    x.style.display = "block";
+    var y = document.getElementById("t2");
+    y.style.display = "block";
 
-    console.log("done")
 }
 
 //update model variable
@@ -82,9 +79,7 @@ function setvariable(net){
 }
 
 async function load_model(){
-  const net = await tf.loadLayersModel('https://raw.githubusercontent.com/vee-upatising/Anime-DCGAN/master/model.json').then(net => setvariable(net))
+  const net = await tf.loadLayersModel('https://raw.githubusercontent.com/vee-upatising/vee-upatising.github.io/master/assets/model.json').then(net => setvariable(net))
 }
-
-load_model()
 
 
