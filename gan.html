@@ -15,7 +15,19 @@
   					 <center>
 				      <h1>Interactive Generative Adversarial Networks</h1>
 				      <p style = "text-align:center";>Drag the slider to generate anime style faces from a range of inputs real time using a Generative Adversarial Network. Alternatively, you can press the 'Generate Random' button to generate a face from a random input instead.</p>
-				      <h5 style = "text-align:center";>Input Range</h5>
+				      <button id="random" type="button" style="  
+					      background-color: #008CBA;
+						  border: none;
+						  color: white;
+						  padding: 5px 5px;
+						  text-align: center;
+						  text-decoration: none;
+						  display: inline-block;
+						  border-radius: 2px;
+						  font-size: 16px;">
+					  	  Generate Random</button>
+					  <div style="height:10px;font-size:5px;">&nbsp;</div>
+					  <h5 style = "text-align:center";>Input Range</h5>
 				      <div class="slidecontainer">
 					  	<input type="range" min="1" max="19" class="slider" id="myRange" style=" 
 					  	-webkit-appearance: none;  /* Override default CSS styles */
@@ -29,20 +41,15 @@
 						  transition: opacity .2s;">
 					  </div>
 				      <img id="myImage" style="border:1px; display: none;"/>
-				      <div style="height:5px;font-size:5px;">&nbsp;</div>
+				      <div style="height:10px;font-size:5px;">&nbsp;</div>
 				      <canvas id="canvas" height="256" width="256"></canvas>
 				      <div style="height:10px;font-size:5px;">&nbsp;</div>
-				      <button id="random" type="button" style="  
-				      background-color: #008CBA;
-					  border: none;
-					  color: white;
-					  padding: 5px 5px;
-					  text-align: center;
-					  text-decoration: none;
-					  display: inline-block;
-					  border-radius: 2px;
-					  font-size: 16px;">
-					  Generate Random</button>
+				      <h5 style = "text-align:center";>Generated Output</h5>
+				      <div style="height:10px;font-size:5px;">&nbsp;</div>
+					  <div style="height:20px;font-size:15px;">&nbsp;</div>
+					  <h1 style = "text-align:center";>How It Works</h1>
+					  <img src="images/forward_propagation.gif" alt="Forward Propagation" class="responsive">
+		  			  <div style="height:20px;font-size:15px;">&nbsp;</div>
 				    </center>
 			</div>
 	</body>
