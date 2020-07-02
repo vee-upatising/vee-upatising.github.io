@@ -35,7 +35,6 @@ function showImage(fileReader) {
 
 //helper function for reading user uploaded image
 function getImageData(img) {
-    console.log('1')
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
     imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     x = tf.browser.fromPixels(imageData)
