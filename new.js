@@ -92,7 +92,7 @@ function setvariable(net){
 }
 
 async function load_model(){
-  const net = await tf.loadLayersModel('https://raw.githubusercontent.com/vee-upatising/Super-Resolution-GAN/eb69944a03c603c1ed411e2c2d7ce2a9318c7255/model.json').then(net => setvariable(net))
+  const net = await tf.loadLayersModel('https://raw.githubusercontent.com/vee-upatising/DLSS/master/model.json').then(net => setvariable(net))
 }
 
 
