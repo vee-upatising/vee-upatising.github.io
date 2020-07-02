@@ -13,8 +13,6 @@ var model;
 
 load_model()
 
-tf.setBackend('cpu')
-
 //for reading user uploaded image
 document.getElementById('myFile').onchange = function (evt) {
     var tgt = evt.target || window.event.srcElement,
