@@ -1,9 +1,9 @@
 const canvas = document.getElementById('canvas');
 const canvas2 = document.getElementById('canvas2');
-canvas.width  = 64;
-canvas.height = 64;
-canvas2.width  = 128;
-canvas2.height = 128;
+canvas.width  = 128;
+canvas.height = 128;
+canvas2.width  = 256;
+canvas2.height = 256;
 
 const ctx = canvas.getContext('2d');
 //placeholder variable for user uploaded image
@@ -39,21 +39,21 @@ function getImageData(img) {
     imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     x = tf.browser.fromPixels(imageData)
     x = x.mul(1/255)
-    x = tf.reshape(x,[1,64,64,3])
+    x = tf.reshape(x,[1,128,128,3])
     output = model.predict(x)
     output = tf.squeeze(output,)
     output = output.mul(255)
     data = output.dataSync()
     //create a buffer array
-    const buffer = new Uint8ClampedArray(128 * 128 * 4)
+    const buffer = new Uint8ClampedArray(256 * 256 * 4)
     //create an Image data var 
-    im = new ImageData(128, 128);
+    im = new ImageData(256, 256);
 
     //map the values to the buffer
     var i = 0;
-    for(var y = 0; y < 128; y++) {
-      for(var x = 0; x < 128; x++) {
-        var pos = (y * 128 + x) * 4;      // position in buffer based on x and y
+    for(var y = 0; y < 256; y++) {
+      for(var x = 0; x < 256; x++) {
+        var pos = (y * 256 + x) * 4;      // position in buffer based on x and y
         buffer[pos  ] = data[i]             // some R value [0, 255]
         buffer[pos+1] = data[i+1]           // some G value
         buffer[pos+2] = data[i+2]           // some B value
