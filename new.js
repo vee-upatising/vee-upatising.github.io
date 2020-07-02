@@ -40,17 +40,14 @@ function getImageData(img) {
     x = tf.browser.fromPixels(imageData)
     x = x.mul(1/255)
     x = tf.reshape(x,[1,128,128,3])
-    console.log(1)
     output = model.predict(x)
     output = tf.squeeze(output,)
     output = output.mul(255)
     data = output.dataSync()
     //create a buffer array
-    console.log(2)
     const buffer = new Uint8ClampedArray(256 * 256 * 4)
     //create an Image data var 
     im = new ImageData(256, 256);
-    console.log(3)
     //map the values to the buffer
     var i = 0;
     for(var y = 0; y < 256; y++) {
@@ -63,14 +60,11 @@ function getImageData(img) {
         i+=3
       }
     }
-    console.log(4)
     //set the buffer to the image data
     im.data.set(buffer)
     //show the image on canvas
     const ctx2 = canvas2.getContext('2d');
-    console.log(5)
     ctx2.putImageData(im, 0, 0); 
-    console.log(6)
     var x = document.getElementById("t1");
     x.style.display = "block";
     var y = document.getElementById("t2");
