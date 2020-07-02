@@ -1,6 +1,5 @@
 const videoElement = document.getElementById('video');
 const canvas = document.getElementById('canvas');
-const canvas2 = document.getElementById('canvas2');
 const randomBtn = document.getElementById('random');
 const ctx = canvas.getContext('2d');
 var slider = document.getElementById("myRange");
