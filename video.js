@@ -1,7 +1,7 @@
 const videoElement = document.getElementById('video');
 const canvas = document.getElementById('canvas');
-canvas.width  = 640;
-canvas.height = 480;
+canvas.width  = videoElement.width;
+canvas.height = videoElement.height;
 
 const startBtn = document.getElementById('start-btn');
 const stopBtn = document.getElementById('stop-btn');
