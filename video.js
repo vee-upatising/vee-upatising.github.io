@@ -1,10 +1,14 @@
 const videoElement = document.getElementById('video');
 const canvas = document.getElementById('canvas');
+
+window.isMobile = /iphone|ipod|ipad|android|blackberry|opera mini|opera mobi|skyfire|maemo|windows phone|palm|iemobile|symbian|symbianos|fennec/i.test(navigator.userAgent.toLowerCase());
+  if(window.isMobile) {
+    videoElement.width = "352";
+    videoElement.height = "469";
+  }
+
 canvas.width  = videoElement.width;
 canvas.height = videoElement.height;
-
-videoElement.width = canvas.width;
-videoElement.height = canvas.height;
 
 const startBtn = document.getElementById('start-btn');
 const stopBtn = document.getElementById('stop-btn');
@@ -17,11 +21,7 @@ var imageData;
 
 var model;
 
-window.isMobile = /iphone|ipod|ipad|android|blackberry|opera mini|opera mobi|skyfire|maemo|windows phone|palm|iemobile|symbian|symbianos|fennec/i.test(navigator.userAgent.toLowerCase());
-  if(window.isMobile) {
-    console.log(videoElement.width)
-    console.log(videoElement.height)
-  }
+
 
 //pre-load model
 loadBodyPix();
