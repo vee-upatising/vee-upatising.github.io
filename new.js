@@ -44,7 +44,7 @@ function getImageData(img) {
       output = model.predict(x)
     }
     catch(err) {
-      alert("Error! You do not have enough memory to perform this computation.");
+      alert("Error! You do not have enough memory to perform this computation. Try using the mobile model.");
     }
     output = model.predict(x)
     output = tf.squeeze(output,)
