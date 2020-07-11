@@ -1,6 +1,6 @@
 const videoElement = document.getElementById('video');
 const canvas = document.getElementById('canvas');
-console.log(videoElement.clientWidth)
+console.log(videoElement.v)
 
 window.isMobile = /iphone|ipod|ipad|android|blackberry|opera mini|opera mobi|skyfire|maemo|windows phone|palm|iemobile|symbian|symbianos|fennec/i.test(navigator.userAgent.toLowerCase());
 
@@ -63,10 +63,8 @@ blurBtn.addEventListener('click', e => {
   blurBtn.hidden = true;
   unblurBtn.hidden = false;
   if(window.isMobile) {
-    canvas.width  = videoElement.offsetWidth;
-    canvas.height = videoElement.offsetHeight;
-    videoElement.width = canvas.width;
-    videoElement.height = canvas.height;
+    canvas.width  = videoElement.scrollWidth;
+    canvas.height = videoElement.scrollHeight;
   }
 
 
@@ -85,8 +83,8 @@ unblurBtn.addEventListener('click', e => {
 });
 
 videoElement.onplaying = () => {
-  canvas.height = videoElement.offsetHeight;
-  canvas.width = videoElement.offsetWidth;
+  canvas.height = videoElement.scrollHeight;
+  canvas.width = videoElement.scrollWidth;
 };
 
 function startVideoStream() {
