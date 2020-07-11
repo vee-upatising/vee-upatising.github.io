@@ -62,8 +62,8 @@ blurBtn.addEventListener('click', e => {
   blurBtn.hidden = true;
   unblurBtn.hidden = false;
   if(window.isMobile) {
-    canvas.width  = videoElement.scrollWidth;
-    canvas.height = videoElement.scrollHeight;
+    canvas.width  = videoElement.clientWidth;
+    canvas.height = videoElement.clientHeight;
     videoElement.width = videoElement.clientWidth;
     videoElement.height = videoElement.clientHeight;
   }
