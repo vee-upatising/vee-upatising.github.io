@@ -14,6 +14,12 @@ var imageData;
 
 var model;
 
+window.isMobile = /iphone|ipod|ipad|android|blackberry|opera mini|opera mobi|skyfire|maemo|windows phone|palm|iemobile|symbian|symbianos|fennec/i.test(navigator.userAgent.toLowerCase());
+if(window.isMobile) {
+  document.getElementById("video").width = "320";
+  document.getElementById("video").height = "240";
+}
+
 //pre-load model
 loadBodyPix();
 
