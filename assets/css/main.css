@@ -1086,6 +1086,11 @@
 		width: 50em;
 	}
 
+	#vb .video{
+		width: 100%    !important;
+  		height: auto   !important;
+	}
+
 /* Footer */
 
 	#footer {
