@@ -14,11 +14,11 @@ var imageData;
 
 var model;
 
-//window.isMobile = /iphone|ipod|ipad|android|blackberry|opera mini|opera mobi|skyfire|maemo|windows phone|palm|iemobile|symbian|symbianos|fennec/i.test(navigator.userAgent.toLowerCase());
-//if(window.isMobile) {
-//  videoElement.width = "256";
-//  videoElement.height = "256";
-//}
+window.isMobile = /iphone|ipod|ipad|android|blackberry|opera mini|opera mobi|skyfire|maemo|windows phone|palm|iemobile|symbian|symbianos|fennec/i.test(navigator.userAgent.toLowerCase());
+  if(window.isMobile) {
+    videoElement.width = "320";
+    videoElement.height = "240";
+  }
 
 //pre-load model
 loadBodyPix();
