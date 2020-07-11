@@ -63,9 +63,9 @@ blurBtn.addEventListener('click', e => {
   unblurBtn.hidden = false;
   if(window.isMobile) {
     canvas.width  = videoElement.clientWidth;
-    canvas.height = videoElement.clientHeight;
+    canvas.height = videoElement.height;
     videoElement.width = videoElement.clientWidth;
-    videoElement.height = videoElement.clientHeight;
+    videoElement.height = videoElement.height;
   }
 
 
@@ -84,7 +84,7 @@ unblurBtn.addEventListener('click', e => {
 });
 
 videoElement.onplaying = () => {
-  canvas.height = videoElement.clientHeight;
+  canvas.height = videoElement.height;
   canvas.width = videoElement.clientWidth;
 };
 
