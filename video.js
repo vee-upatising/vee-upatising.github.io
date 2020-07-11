@@ -1,11 +1,11 @@
 const videoElement = document.getElementById('video');
 const canvas = document.getElementById('canvas');
 
-//window.isMobile = /iphone|ipod|ipad|android|blackberry|opera mini|opera mobi|skyfire|maemo|windows phone|palm|iemobile|symbian|symbianos|fennec/i.test(navigator.userAgent.toLowerCase());
-//  if(window.isMobile) {
-//   videoElement.width = "352";
-//    videoElement.height = "469";
-//  }
+window.isMobile = /iphone|ipod|ipad|android|blackberry|opera mini|opera mobi|skyfire|maemo|windows phone|palm|iemobile|symbian|symbianos|fennec/i.test(navigator.userAgent.toLowerCase());
+  if(window.isMobile) {
+   console.log(videoElement.clientWidth)
+   console.log(videoElement.clientHeight)
+  }
 
 const startBtn = document.getElementById('start-btn');
 const stopBtn = document.getElementById('stop-btn');
@@ -67,6 +67,8 @@ blurBtn.addEventListener('click', e => {
   unblurBtn.hidden = false;
   canvas.width  = videoElement.clientWidth;
   canvas.height = videoElement.clientHeight;
+  console.log(videoElement.clientWidth)
+  console.log(videoElement.clientHeight)
 
   videoElement.hidden = true;
   canvas.hidden = false;
