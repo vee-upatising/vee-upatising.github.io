@@ -84,7 +84,7 @@ function setvariable(net){
 }
 
 async function load_model(){
-  const net = await tf.loadLayersModel('https://raw.githubusercontent.com/vee-upatising/DLSS/24f0705bf0b6155a42e06e1f832fdef6d571f3d1/model.json').then(net => setvariable(net))
+  const net = await tf.loadLayersModel('https://raw.githubusercontent.com/vee-upatising/DLSS/1145404fd6dc3efb353ac0c1406cb1e2903c27ea/model.json').then(net => setvariable(net))
 }
 
 
