@@ -1,6 +1,5 @@
 const videoElement = document.getElementById('video');
 const canvas = document.getElementById('canvas');
-console.log(videoElement.v)
 
 window.isMobile = /iphone|ipod|ipad|android|blackberry|opera mini|opera mobi|skyfire|maemo|windows phone|palm|iemobile|symbian|symbianos|fennec/i.test(navigator.userAgent.toLowerCase());
 
@@ -63,8 +62,8 @@ blurBtn.addEventListener('click', e => {
   blurBtn.hidden = true;
   unblurBtn.hidden = false;
   if(window.isMobile) {
-    canvas.width  = videoElement.clientWidth;
-    canvas.height = videoElement.clientHeight;
+    canvas.width  = videoElement.scrollWidth;
+    canvas.height = videoElement.scrollHeight;
     videoElement.width = videoElement.clientWidth;
     videoElement.height = videoElement.clientHeight;
   }
