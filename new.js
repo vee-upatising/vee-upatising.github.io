@@ -40,6 +40,12 @@ function getImageData(img) {
     x = tf.browser.fromPixels(imageData)
     x = x.mul(1/255)
     x = tf.reshape(x,[1,128,128,3])
+    try {
+      output = model.predict(x)
+    }
+    catch(err) {
+      alert("Error, you do not have enough memory to perform this computation.");
+    }
     output = model.predict(x)
     output = tf.squeeze(output,)
     output = output.mul(255)
