@@ -5,6 +5,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -26,7 +27,7 @@
 	  					</h2>
 	  				</section>
 
-	  				<div style="height:2px;font-size:5px;">&nbsp;</div>
+	  				<div style="height:20px;font-size:5px;">&nbsp;</div>
 
 					<section id="main">
 						<header>
@@ -35,9 +36,32 @@
 							<h2 style="font-size:80%">Software Engineering</h2>
 							<h2 style="font-size:80%">Test Developer</h2>
 							<h2 style="font-size:80%">at <a href="https://workera.ai/">Workera.AI</a></h2>
-							<p style="color:#6495ED;text-align:center;">
-								<a href="assets/resume.pdf">RESUME</a>
-							</p>
+						    <button onclick="window.location.href='assets/resume.pdf';" style="  
+						      background-color: #3399ff;
+							  border: none;
+							  color: white;
+							  padding: 5px 5px;
+							  text-align: center;
+							  text-decoration: none;
+							  display: inline-block;
+							  border-radius: 2px;
+							  font-size: 16px;">
+						      Resume</button>
+						    <div style="height:15px;font-size:5px;">&nbsp;</div>
+							<center><canvas id="myChart"></canvas></center>
+							<div style="height:15px;font-size:5px;">&nbsp;</div>
+							<button onclick="window.location.href='https://app.workera.ai/public/candidate/certificate?code=ASNTE2Q0';" style="  
+						      background-color: #3399ff;
+							  border: none;
+							  color: white;
+							  padding: 5px 5px;
+							  text-align: center;
+							  text-decoration: none;
+							  display: inline-block;
+							  border-radius: 2px;
+							  font-size: 16px;">
+						      View My Certification</button>
+						      <div style="height:30px;font-size:5px;">&nbsp;</div>
 						</header>
 						<footer>
 							<ul class="icons">
@@ -48,7 +72,7 @@
 						</footer>
 					</section>
 
-					<div style="height:2px;font-size:5px;">&nbsp;</div>
+					<div style="height:20px;font-size:5px;">&nbsp;</div>
 
 					<section id="header">
 	  					<h1>
@@ -64,10 +88,53 @@
 
 		<!-- Scripts -->
 			<script>
+				percentile = ['94th percentile','94th percentile','95th percentile','95th percentile','99th percentile','98th percentile']
 				if ('addEventListener' in window) {
 					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
 					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 				}
+				var ctx = document.getElementById('myChart').getContext('2d');
+				var chart = new Chart(ctx, {
+				    // The type of chart we want to create
+				    type: 'radar',
+
+				    // The data for our dataset
+				    data: {
+				        labels: ['Deep Learning', 'Data Science', 'Algorithms', 'Software Engineering', 'Machine Learning', 'Mathematics'],
+				        datasets: [{
+				            backgroundColor: 'rgb(51, 153, 255, 0.5)',
+				            borderColor: 'rgb(15, 99, 200)',
+				            data: [72, 80, 87, 75, 86, 91]
+				        }]
+				    },
+
+				    // Configuration options go here
+				    options: {
+					    legend: {
+					        display: false,
+
+					    },
+					    tooltips: {
+							callbacks: {
+			                    label: function(tooltipItem, data) {
+			                        return 'Score: ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + '%, ' + percentile[tooltipItem.index];
+			                    }
+			                }
+					    },
+					    scale: {
+					    	pointLabels: {
+      							fontSize: 9,
+  							},
+					        angleLines: {
+					            display: false
+					        },
+					        ticks: {
+					            suggestedMin: 0,
+					            suggestedMax: 100
+					        }
+					    },
+					}
+				});
 			</script>
 	</body>
 </html>
