@@ -88,6 +88,10 @@
 
 		<!-- Scripts -->
 			<script>
+				fnt=10;
+				if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+				 fnt = 2;
+				}
 				percentile = ['94th percentile','94th percentile','95th percentile','95th percentile','99th percentile','98th percentile']
 				if ('addEventListener' in window) {
 					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
@@ -123,7 +127,7 @@
 					    },
 					    scale: {
 					    	pointLabels: {
-      							fontSize: 9,
+      							fontSize: fnt,
   							},
 					        angleLines: {
 					            display: false
