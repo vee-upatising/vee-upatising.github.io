@@ -15,7 +15,12 @@ randomBtn.addEventListener('click', e => {inference(Array.from({length: 64}, () 
 //generates face based on input
 function inference(input){
     input = tf.tensor(input,[1,64])
-    output = model.predict(input)
+    try {
+      output = model.predict(input)
+    }
+    catch(err) {
+      alert("Error! You do not have enough memory to perform this computation.");
+    }
     output = tf.squeeze(output,)
     output = output.mul(255)
     data = output.dataSync()
