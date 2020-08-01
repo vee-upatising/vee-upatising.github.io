@@ -1,4 +1,3 @@
-const videoElement = document.getElementById('video');
 const canvas = document.getElementById('canvas');
 const randomBtn = document.getElementById('random');
 const ctx = canvas.getContext('2d');
