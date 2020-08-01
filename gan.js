@@ -107,6 +107,39 @@ function newData(chart, val){
   inference(chart.data.datasets[0].data)
 }
 
+function displayWindowSize(){
+  //redraw line chart
+  var myLineChart = new Chart(ctx2, {
+      type: 'line',
+      data: {
+        labels: ['Input 1','Input 2','Input 3','Input 4','Input 5','Input 6','Input 7','Input 8','Input 9','Input 10','Input 11','Input 12','Input 13','Input 14','Input 15','Input 16','Input 17','Input 18','Input 19','Input 20','Input 21','Input 22','Input 23','Input 24','Input 25','Input 26','Input 27','Input 28','Input 29','Input 30','Input 31','Input 32','Input 33','Input 34','Input 35','Input 36','Input 37','Input 38','Input 39','Input 40','Input 41','Input 42','Input 43','Input 44','Input 45','Input 46','Input 47','Input 48','Input 49','Input 50','Input 51','Input 52','Input 53','Input 54','Input 55','Input 56','Input 57','Input 58','Input 59','Input 60','Input 61','Input 62','Input 63','Input 64'],
+        datasets: [
+          {
+            label: 'Noise Value',
+            backgroundColor: 'rgba(66,99,198,1)',
+            borderColor: 'rgba(0,0,0,1)',
+            data: [0.1533957075325317,-1.58510832711727,-0.5679621856233572,-0.22989065330372507,1.4183772138136732,-1.2468029349794898,-1.2051935339422708,-1.0442318519821505,-1.6769131996724995,1.1491812482260284,-1.2672462777542248,-0.03343584898005753,-0.6724373471902428,-1.3222689568115393,1.6130868726156062,1.7565920150950003,-0.8472816223133163,-0.33666954049364944,-0.11821532843817861,0.3159032792528481,0.581500226839183,-2.308071132122343,0.2637956797299091,-1.0608846087058261,0.4843082462379539,1.7966635532479174,-0.14499561258420074,0.6096379809977133,-0.900116038413073,0.6868910391225435,-0.8170558867910737,-0.5482030113720731,-0.5518926871437861,-0.8811677938928193,-1.7314521817567603,-1.1108296557547537,-0.6160240838271555,-0.17521508861242566,1.2598100516601305,-0.11115556827705302,-0.20534920289289502,0.3970722244763261,0.6642932084275649,-1.1545425936668612,-0.616160067848653,0.30680111168846336,-0.21665498142506925,-0.05383124314705794,-1.5588969856854797,1.3921709260735906,-0.8486533455143497,0.07737294965453935,0.6266643699548351,1.7948535325875354,0.12139088419197602,2.2579284674420603,0.34811963818965197,0.8341972487966769,0.14769602272658452,0.28110251194115277,0.431234836138935,0.41247882955229376,1.3160870509618487,0.22996196631594146]
+          }
+        ]
+      },
+      resposive: true,
+      options: {
+              title:{
+                display:false
+              },
+              legend:{
+                display:false,
+                position:'right'
+              },
+              maintainAspectRatio: true
+            }
+      });
+
+}
+     
+// Attaching the event listener function to window's resize event
+window.addEventListener("resize", displayWindowSize);
+
 //slider with range on inputs that look good
 slider.oninput = function() {
     if(this.value == 1){
