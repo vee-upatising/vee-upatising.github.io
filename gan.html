@@ -1,10 +1,11 @@
 <!DOCTYPE HTML>
 <html>
 	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.2"  crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 	<head>
 		<title>Interactive GANs</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="is-preload">
@@ -13,8 +14,15 @@
 				<section id="vb">
 					<p style="text-align: left; letter-spacing: 1px"><a href = "projects.html">Go Back</a></p>
   					 <center>
-				      <h1>Interactive Generative Adversarial Networks</h1>
-				      <p style = "text-align:center";>Drag the slider to generate anime style faces from a range of inputs real time using a Generative Adversarial Network. Alternatively, you can press the 'Generate Random' button to generate a face from a random input instead.</p>
+				      <h2 style = "font-weight: bold;">Interactive Generative Adversarial Networks</h2>
+				      <p style = "text-align:center";>Drag the slider to use a Generative Adverarial Network to draw Anime style faces. Alternatively, you can press the 'Generate Random' button to generate a face from a random input instead.</p>
+
+				      <h5 style = "text-align:center";>Generated Output</h5>
+				      <img id="myImage" style="border:1px; display: none;"/>
+				      <div style="height:10px;font-size:5px;">&nbsp;</div>
+				      <canvas id="canvas" height="256" width="256"></canvas>
+				      <div style="height:10px;font-size:5px;">&nbsp;</div>
+
 				      <button id="random" type="button" style="  
 					      background-color: #008CBA;
 						  border: none;
@@ -40,13 +48,13 @@
 						  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
 						  transition: opacity .2s;">
 					  </div>
-				      <img id="myImage" style="border:1px; display: none;"/>
-				      <div style="height:10px;font-size:5px;">&nbsp;</div>
-				      <canvas id="canvas" height="256" width="256"></canvas>
-				      <div style="height:10px;font-size:5px;">&nbsp;</div>
-				      <h5 style = "text-align:center";>Generated Output</h5>
-				      <div style="height:10px;font-size:5px;">&nbsp;</div>
-					  <div style="height:20px;font-size:15px;">&nbsp;</div>
+
+				      <div class="responsive">
+				      	<center><canvas id="myChart"></canvas></center>
+				  	  </div>
+
+					  <div style="height:10px;font-size:5px;">&nbsp;</div>
+				      
 					  <h1 style = "text-align:center";>How It Works</h1>
 					  <img src="images/forward_propagation.gif" alt="Forward Propagation" class="responsive">
 		  			  <div style="height:20px;font-size:15px;">&nbsp;</div>
@@ -54,4 +62,11 @@
 			</div>
 	</body>
 	<script src="gan.js"></script>
+	<style>
+		#responsive {
+		    display: inline-block;
+		    position: relative;
+		    width: 100%;
+		}
+	</style>
 </html>
