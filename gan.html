@@ -6,33 +6,22 @@
 		<title>Interactive GANs</title>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
 			<div id="wrapper2">
 				<section id="gan">
-					<p style="text-align: left; letter-spacing: 1px"><a href = "projects.html">Go Back</a></p>
+					<p style="text-align: left; letter-spacing: 1px"><a class= "btn btn-secondary btn-sm" href='projects.html' role="button">Go Back</a></p>
   					 <center>
 				      <h2 style = "font-weight: bold;">Interactive Generative Adversarial Networks</h2>
 				      <p style = "text-align:center";>Drag the slider to use a Generative Adverarial Network to draw Anime style faces. Alternatively, you can press the 'Generate Random' button to generate a face from a random input instead.</p>
-
 				      <h5 style = "text-align:center";>Generated Output</h5>
 				      <img id="myImage" style="border:1px; display: none;"/>
 				      <div style="height:10px;font-size:5px;">&nbsp;</div>
 				      <canvas id="canvas" height="256" width="256"></canvas>
 				      <div style="height:10px;font-size:5px;">&nbsp;</div>
-
-				      <button id="random" type="button" style="  
-					      background-color: #008CBA;
-						  border: none;
-						  color: white;
-						  padding: 5px 5px;
-						  text-align: center;
-						  text-decoration: none;
-						  display: inline-block;
-						  border-radius: 2px;
-						  font-size: 16px;">
-					  	  Generate Random</button>
+				      <button id = "random" type="button" class="btn btn-primary">Generate Random</button>
 					  <div style="height:10px;font-size:5px;">&nbsp;</div>
 					  <h5 style = "text-align:center";>Input Range</h5>
 				      <div class="slidecontainer">
@@ -68,6 +57,12 @@
 		    display: inline-block;
 		    position: relative;
 		    width: 100%;
+		}
+		.btn-primary {
+		    background-color: rgb(66,99,198);
+		}
+		.btn-primary:hover {
+		    background-color: #224199;
 		}
 	</style>
 </html>
