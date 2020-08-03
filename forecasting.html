@@ -3,10 +3,17 @@
 	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0"  crossorigin="anonymous"></script>
 	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
 	<script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+	<script>
+	//if mobile
+	window.isMobile = /iphone|ipod|ipad|android|blackberry|opera mini|opera mobi|skyfire|maemo|windows phone|palm|iemobile|symbian|symbianos|fennec/i.test(navigator.userAgent.toLowerCase());
+	if(window.isMobile){
+		x = document.getElementById("949accaf-c461-43fc-8597-fd54452a6584")
+		x.style.display = "none";
+	}
+	</script>
 	<head>
 		<title>Social Media Usage Analysis</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="is-preload">
@@ -22,7 +29,7 @@
 				     <div id="46e33555-505c-4125-9655-d6047f31f910" class="plotly-graph-div" style="height:100%; width:100%;"></div>
 				     <div style="height:20px;font-size:20px;">&nbsp;</div>
 				     <center><h2 style = "font-weight: bold;">Seasonal Trends</h2></center>
-				     <center><div id="949accaf-c461-43fc-8597-fd54452a6584" class="plotly-graph-div" style="height:1500px; width:1000px;"></div></center>
+				     <center><div id="949accaf-c461-43fc-8597-fd54452a6584" class="plotly-graph-div" style="height:100%; width:100%;"></div></center>
 			</div>
 	</body>
 	<script type="text/javascript">
@@ -65,6 +72,5 @@
                         {"responsive": true}
                     )
                 };
-                
     </script>
 </html>
