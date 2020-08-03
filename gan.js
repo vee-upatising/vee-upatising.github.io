@@ -44,7 +44,7 @@ randomBtn.addEventListener('click', e => randomData(myLineChart));
 
 //preload a generated face
 const image = new Image();
-image.src = "images/preload.PNG";
+image.src = "https://raw.githubusercontent.com/vee-upatising/vee-upatising.github.io/master/images/preload.PNG";
 image.onload = () => {
     ctx.drawImage(image, 0, 0, 256, 256);
 };
