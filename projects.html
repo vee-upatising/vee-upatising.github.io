@@ -5,37 +5,30 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
 			<div id="wrapper2">
 				<section id="projects">
-					<p style="text-align: left; letter-spacing: 1px"><a href = "index.html">Go Back</a></p>
+					<p style="text-align: left; letter-spacing: 1px"><a class= "btn btn-secondary btn-sm" href='index.html' role="button">Go Back</a></p>
+					
   					<h1>Projects</h1>
   					<div style="height:15px;font-size:15px;">&nbsp;</div>
-  					<p> &emsp; I like to work on personal programming projects in my free time. I am specifically interested in Data Science and I do most of my work in Python. I have compiled a list of projects that I am proud of. These are all viewable on my <a href = "https://github.com/vee-upatising">GitHub</a>.</p>
+  					<p>I like to work on personal programming projects in my free time. I am specifically interested in Data Science and I do most of my work in Python and JavaScript.</p>
 
   					  <details>
   						<summary>Interactive Generative Adversarial Networks</summary>
-  						<div style="height:15px;font-size:15px;">&nbsp;</div>
-						    <button onclick="window.location.href='gan.html';" style="  
-						      background-color: #008CBA;
-							  border: none;
-							  color: white;
-							  padding: 5px 5px;
-							  text-align: center;
-							  text-decoration: none;
-							  display: inline-block;
-							  border-radius: 2px;
-							  font-size: 16px;">
-						      Go To Application</button>
-  							<p style="text-align: center;"><a href = "https://github.com/vee-upatising/Anime-DCGAN">GitHub</a> <a href = "https://github.com/vee-upatising/Cat-GAN">Pages</a></p>
+  							<div style="height:15px;font-size:15px;">&nbsp;</div>
+  							<a class="btn btn-primary" href='gan.html' role="button">View Web App</a>
 		  					<div style="height:5px;font-size:15px;">&nbsp;</div>
 		  					<p>Generating cats and anime style faces using Deep Convolutional GANs. Interpolated sampling through the latent space of the generative model is visualized below:</p>
 		  					<video controls autoplay loop style = "max-width: 100%;">
 							  <source src="images/gifcropped.webm" type="video/webm">
 							</video>
+							<div style="height:5px;font-size:5px;">&nbsp;</div>
+  							<a class="btn btn-primary btn-sm" href="https://github.com/vee-upatising/Anime-DCGAN" role="button">View Code on Github</a>
 		  					<div style="height:15px;font-size:15px;">&nbsp;</div>
   					</details>
 
@@ -44,37 +37,17 @@
   					<details>
   						<summary>Social Media Usage Analysis</summary>
   							<div style="height:15px;font-size:15px;">&nbsp;</div>
-  							<button onclick="window.location.href='forecasting.html';" style="  
-						      background-color: #008CBA;
-							  border: none;
-							  color: white;
-							  padding: 5px 5px;
-							  text-align: center;
-							  text-decoration: none;
-							  display: inline-block;
-							  border-radius: 2px;
-							  font-size: 16px;">
-						      Go To Application</button>
+  							<a class="btn btn-primary" href='forecasting.html' role="button">View Web App</a>
   							<div style="height:15px;font-size:15px;">&nbsp;</div>
-  							<p style="text-align: center;"><a href = "https://github.com/vee-upatising/Instagram-Forecasting">GitHub Page</a></p>
+  							<a class="btn btn-primary btn-sm" href="https://github.com/vee-upatising/Instagram-Forecasting" role="button">View Code on Github</a>
   					</details>
 
   					<div style="height:15px;font-size:15px;">&nbsp;</div>
 
   					<details>
   						<summary>Real Time Virtual Background</summary>
-  						<div style="height:15px;font-size:15px;">&nbsp;</div>
-    						<button onclick="window.location.href='vb.html';" style="  
-						      background-color: #008CBA;
-							  border: none;
-							  color: white;
-							  padding: 5px 5px;
-							  text-align: center;
-							  text-decoration: none;
-							  display: inline-block;
-							  border-radius: 2px;
-							  font-size: 16px;">
-						      Go To Application</button>
+  							<div style="height:15px;font-size:15px;">&nbsp;</div>
+  							<a class="btn btn-primary" href='vb.html' role="button">View Web App</a>
   					</details>
 
   					<div style="height:15px;font-size:15px;">&nbsp;</div>
@@ -82,22 +55,13 @@
   					<details>
   						<summary>Deep Learned Super Resolution</summary>
   							<div style="height:15px;font-size:15px;">&nbsp;</div>
-  							<button onclick="window.location.href='model.html';" style="  
-						      background-color: #008CBA;
-							  border: none;
-							  color: white;
-							  padding: 5px 5px;
-							  text-align: center;
-							  text-decoration: none;
-							  display: inline-block;
-							  border-radius: 2px;
-							  font-size: 16px;">
-						      Go To Application</button>
-  							<p style="text-align: center;"><a href = "https://github.com/vee-upatising/Super-Resolution-GAN">GitHub Page</a></p>
+  							<a class="btn btn-primary" href='model.html' role="button">View Web App</a>
 		  					<div style="height:5px;font-size:15px;">&nbsp;</div>
 		  					<p>Super sampling images to 4 times their original size using Convolutional Neural Networks. I compare <a href="https://pillow.readthedocs.io/en/3.1.x/reference/Image.html#PIL.Image.Image.resize"> Nearest Neighbor Interpolation</a> to my Deep Learned Super Resolution program below:</p>
 		  					<img src="images/flip.gif" alt="Switch Flip" class="responsive">
 		  					<img src="images/sr.jpg" alt="anime" class="responsive">
+  							<div style="height:15px;font-size:15px;">&nbsp;</div>
+  							<a class="btn btn-primary btn-sm" href="https://github.com/vee-upatising/DLSS" role="button">View Code on Github</a>
 		  					<div style="height:15px;font-size:15px;">&nbsp;</div>
   					</details>
 
@@ -105,19 +69,11 @@
 
   					<details>
   						<summary>Controls Frenzy</summary>
-  						<div style="height:15px;font-size:15px;">&nbsp;</div>
-  						<p style="text-align: center;">Two Player <i>Bomberman</i> style game developed in C# where controls get randomized every round.</p>
-    						<button onclick="window.location.href='https://vee-upatising.github.io/Controls-Frenzy/';" style="  
-						      background-color: #008CBA;
-							  border: none;
-							  color: white;
-							  padding: 5px 5px;
-							  text-align: center;
-							  text-decoration: none;
-							  display: inline-block;
-							  border-radius: 2px;
-							  font-size: 16px;">
-						      Go To Application</button>
+  							<div style="height:15px;font-size:15px;">&nbsp;</div>
+  							<p style="text-align: center;">Two Player <i>Bomberman</i> style game developed in C# where controls get randomized every round.</p>
+    	  					<a class="btn btn-primary" href='https://vee-upatising.github.io/Controls-Frenzy/' role="button">View Web App</a>
+  							<div style="height:15px;font-size:15px;">&nbsp;</div>
+    	  					<a class="btn btn-primary btn-sm" href="https://github.com/vee-upatising/Controls-Frenzy" role="button">View Code on Github</a>
   					</details>
 
   					<div style="height:15px;font-size:15px;">&nbsp;</div>
@@ -125,7 +81,6 @@
   					<details>
   						<summary>Recycle Bot</summary>
   							<div style="height:15px;font-size:15px;">&nbsp;</div>
-		  					<p style="text-align: center;"><a href = "https://github.com/vee-upatising/Recycle-Bot">GitHub Page</a></p>
 		  					<p>Using machine learning to sort trash from recyclables on the Raspberry Pi 4.</p>
 		  					<div style="height:5px;font-size:15px;">&nbsp;</div>
 		  					<img src="images/re.gif" alt="demo" class="responsive">
@@ -135,6 +90,8 @@
 		  					<img src="images/HeatMap44.png" alt="HeatMap" class="responsive">
 		  					<p>I used Principal Component Analysis to project the data onto 3 dimensions and found a linear hyperplane that separates the two classes with 99.2% accuracy.</p>
 		  					<img src="images/SVM.jpg" alt="Support Vector Machine" class="responsive">
+  							<div style="height:15px;font-size:15px;">&nbsp;</div>
+    	  					<a class="btn btn-primary btn-sm" href="https://github.com/vee-upatising/Recycle-Bot" role="button">View Code on Github</a>
 		  					<div style="height:15px;font-size:15px;">&nbsp;</div>
   					</details>
 
@@ -144,10 +101,10 @@
   					<details>
   						<summary>Deep Color</summary>
   							<div style="height:15px;font-size:15px;">&nbsp;</div>
-  							<p style="text-align: center;"><a href = "https://github.com/vee-upatising/Deep-Color">GitHub Page</a></p>
-		  					<div style="height:5px;font-size:15px;">&nbsp;</div>
 		  					<p>Restoring The Color In Black & White Images Using Deep Convolutional GANs</p>
-		  					<img src="images/combined.jpg" alt="restored" class="responsive">
+		  					<img src="images/combined.jpg" alt="restored" class="responsive">  							
+		  					<div style="height:15px;font-size:15px;">&nbsp;</div>
+    	  					<a class="btn btn-primary btn-sm" href="https://github.com/vee-upatising/Deep-Color" role="button">View Code on Github</a>
 		  					<div style="height:15px;font-size:15px;">&nbsp;</div>
   					</details>
   					
@@ -156,10 +113,10 @@
   					<details>
   						<summary>Vector Quantized Variational AutoEncoder</summary>
   							<div style="height:15px;font-size:15px;">&nbsp;</div>
-  							<p style="text-align: center;"><a href = "https://github.com/vee-upatising/Pokemon-VQVAE">GitHub Page</a></p>
-		  					<div style="height:5px;font-size:15px;">&nbsp;</div>
 		  					<p>Using a Neural Network to come up with a image compression algorithm that takes up 37.5% of the space of the original image:</p>
 		  					<img src="images/vqvae.JPG" alt="Vector Quantized Variational AutoEncoder" class="responsive">
+  							<div style="height:15px;font-size:15px;">&nbsp;</div>
+    	  					<a class="btn btn-primary btn-sm" href="https://github.com/vee-upatising/Pokemon-VQVAE" role="button">View Code on Github</a>
 		  					<div style="height:15px;font-size:15px;">&nbsp;</div>
   					</details>
 
@@ -168,9 +125,9 @@
   					<details>
   						<summary>Unsupervised Learning Image Segmentation</summary>
   							<div style="height:15px;font-size:15px;">&nbsp;</div>
-  							<p style="text-align: center;"><a href = "https://github.com/vee-upatising/K-Means-Image-Segmentation">GitHub Page</a></p>
-		  					<div style="height:5px;font-size:15px;">&nbsp;</div>
 		  					<img src="images/kmeans.JPG" alt="K-Means" class="responsive">
+  							<div style="height:15px;font-size:15px;">&nbsp;</div>
+    	  					<a class="btn btn-primary btn-sm" href="https://github.com/vee-upatising/K-Means-Image-Segmentation" role="button">View Code on Github</a>
 		  					<div style="height:15px;font-size:15px;">&nbsp;</div>
   					</details>
 
@@ -179,12 +136,12 @@
   					<details>
   						<summary>Ms. Pac-Man Reinforcement Learning</summary>
   							<div style="height:15px;font-size:15px;">&nbsp;</div>
-  							<p style="text-align: center;"><a href = "https://github.com/vee-upatising/Deep-Q-Network">GitHub Page</a></p>
-		  					<div style="height:5px;font-size:15px;">&nbsp;</div>
 		  					<p>Using Deep Q Networks to play Ms. Pac-Man:</p>
 		  					<video controls autoplay loop style = "max-width: 100%;">
 							  <source src="images/mspacman.mp4" type="video/mp4">
 							</video>
+  							<div style="height:15px;font-size:15px;">&nbsp;</div>
+    	  					<a class="btn btn-primary btn-sm" href="https://github.com/vee-upatising/Deep-Q-Network" role="button">View Code on Github</a>
 		  					<div style="height:15px;font-size:15px;">&nbsp;</div>
   					</details>
 
@@ -193,11 +150,11 @@
   					<details>
   						<summary>Unsupervised Learning Image Compression</summary>
   							<div style="height:15px;font-size:15px;">&nbsp;</div>
-  							<p style="text-align: center;"><a href = "https://github.com/vee-upatising/PCA">GitHub Page</a></p>
-		  					<div style="height:5px;font-size:15px;">&nbsp;</div>
 		  					<p>Using Principal Component Analysis and K-Means to compress images:</p>
 		  					<img src="images/PCA.png" alt="PCA" class="responsive">
 		  					<img src="images/KMEANS.png" alt="KMEANS" class="responsive">
+  							<div style="height:15px;font-size:15px;">&nbsp;</div>
+    	  					<a class="btn btn-primary btn-sm" href="https://github.com/vee-upatising/PCA" role="button">View Code on Github</a>
 		  					<div style="height:15px;font-size:15px;">&nbsp;</div>
   					</details>
 
@@ -206,13 +163,13 @@
   					<details>
   						<summary>Kernel Ridge Regression</summary>
   							<div style="height:15px;font-size:15px;">&nbsp;</div>
-  							<p style="text-align: center;"><a href = "https://github.com/vee-upatising/Kernel-Ridge-Regression">GitHub Page</a></p>
-		  					<div style="height:5px;font-size:15px;">&nbsp;</div>
 		  					<p>Kernel Ridge Regression and Basis Expanded Ridge Regression from scratch using NumPy:</p>
 		  					<img src="images/krr.jpg" alt="Kernel Ridge Regression" class="responsive">
+  							<div style="height:15px;font-size:15px;">&nbsp;</div>
+    	  					<a class="btn btn-primary btn-sm" href="https://github.com/vee-upatising/Kernel-Ridge-Regression" role="button">View Code on Github</a>
+  							<div style="height:15px;font-size:15px;">&nbsp;</div>
+    	  					<a class="btn btn-primary btn-sm" href="https://www.kaggle.com/c/s20-589-hw1-datab/leaderboard" role="button">View Leaderboard Results</a>
 		  					<div style="height:15px;font-size:15px;">&nbsp;</div>
-		  					<p style="text-align: center;"><a href = "https://www.kaggle.com/c/s20-589-hw1-datab/leaderboard">Leaderboard Results</a></p>
-		  					
   					</details>
 
   					<div style="height:15px;font-size:15px;">&nbsp;</div>
@@ -220,7 +177,6 @@
   					<details>
   						<summary>Machine Learning Generated Music</summary>
 	  						<div style="height:15px;font-size:15px;">&nbsp;</div>
-			  				<p style="text-align: center;"><a href = "https://github.com/vee-upatising/Music-Composition-GAN">GitHub Page</a></p>
 			  				<audio controls>
 	  						<source src="images/3.mp3" type="audio/mpeg">
 							</audio>
@@ -232,6 +188,8 @@
 							<audio controls>
 		  						<source src="images/2.mp3" type="audio/mpeg">
 							</audio>
+  							<div style="height:15px;font-size:15px;">&nbsp;</div>
+    	  					<a class="btn btn-primary btn-sm" href="https://github.com/vee-upatising/Music-Composition-GAN" role="button">View Code on Github</a>
 							<div style="height:15px;font-size:15px;">&nbsp;</div>
   					</details>
 
