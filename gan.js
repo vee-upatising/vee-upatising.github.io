@@ -111,8 +111,12 @@ function newData(chart, val){
 }
 
 function displayWindowSize(){
+  //destroy the old chart first
+  if(myLineChart){
+    myLineChart.destroy();
+  }
   //redraw line chart
-  var myLineChart = new Chart(ctx2, {
+  myLineChart = new Chart(ctx2, {
       type: 'line',
       data: {
         labels: ['Input 1','Input 2','Input 3','Input 4','Input 5','Input 6','Input 7','Input 8','Input 9','Input 10','Input 11','Input 12','Input 13','Input 14','Input 15','Input 16','Input 17','Input 18','Input 19','Input 20','Input 21','Input 22','Input 23','Input 24','Input 25','Input 26','Input 27','Input 28','Input 29','Input 30','Input 31','Input 32','Input 33','Input 34','Input 35','Input 36','Input 37','Input 38','Input 39','Input 40','Input 41','Input 42','Input 43','Input 44','Input 45','Input 46','Input 47','Input 48','Input 49','Input 50','Input 51','Input 52','Input 53','Input 54','Input 55','Input 56','Input 57','Input 58','Input 59','Input 60','Input 61','Input 62','Input 63','Input 64'],
